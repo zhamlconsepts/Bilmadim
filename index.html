@@ -1,3 +1,4 @@
+> جما:
 <!DOCTYPE html>
 <html lang="uz">
 <head>
@@ -21,6 +22,7 @@
             align-items: center;
         }
 
+        /* Orqa fondagi zarrachalar uchun canvas */
         #canvas {
             position: absolute;
             top: 0;
@@ -35,6 +37,7 @@
             pointer-events: none;
         }
 
+        /* Romantik yurak animatsiyasi */
         .heart {
             font-size: 80px;
             color: #ff4d6d;
@@ -60,6 +63,7 @@
             filter: drop-shadow(0 0 10px rgba(255, 77, 109, 0.5));
         }
 
+        /* Matn yozilish effekti */
         .typewriter {
             font-size: 1.2rem;
             margin-top: 10px;
@@ -68,6 +72,7 @@
             color: #ffb3c1;
         }
 
+        /* Tugma - noodatiy bo'lishi uchun */
         .btn {
             margin-top: 30px;
             padding: 12px 30px;
@@ -109,6 +114,7 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
+        // Sichqoncha harakati
         let mouse = { x: null, y: null };
         window.addEventListener('mousemove', (e) => {
             mouse.x = e.x;
@@ -124,8 +130,10 @@
                 this.y = y;
                 this.size = Math.random() * 5 + 1;
                 this.speedX = Math.random() * 3 - 1.5;
-                this.speedY = Math.random() * 3 - 1.5;
-                this.color = `hsl(${Math.random() * 60 + 330}, 100%, 70%)`;
+
+> جما:
+this.speedY = Math.random() * 3 - 1.5;
+                this.color = hsl(${Math.random() * 60 + 330}, 100%, 70%);
             }
             update() {
                 this.x += this.speedX;
@@ -154,6 +162,7 @@
         }
         animate();
 
+        // Matn yozish funksiyasi
         const message = "Sizni uchratganim - hayotimdagi eng go'zal tasodif. Har bir soniya siz bilan yanada yorqinroq...";
         let index = 0;
         function typeWriter() {
@@ -165,6 +174,7 @@
         }
         setTimeout(typeWriter, 1500);
 
+        // Noodatiy portlash effekti
         function createBurst() {
             for(let i = 0; i < 50; i++) {
                 particles.push(new Particle(window.innerWidth/2, window.innerHeight/2 - 50));
